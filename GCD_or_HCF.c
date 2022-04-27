@@ -1,14 +1,16 @@
 #include<stdio.h>
 int main()
 {
-    int n,m,i,HCF;
-    scanf("%d%d",&n,&m);
-    for(i=1;i<n || i<m;i++)
+    int n,m,i,min,hcf=1;
+    scanf("%d %d",&n,&m);
+    min=m>n?m:n;
+    for(i=min;i>=1;i--)
     {
-        if(n%i==0 && m%i==0)
-        {
-            HCF=i;
-        }
+        if(m%i==0 && n%i==0)
+       {
+           hcf=i;
+        break;
+       }
     }
-    printf("%d",HCF);
+    printf("%d",hcf);
 }
